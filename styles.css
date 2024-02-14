@@ -1,0 +1,74 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li  {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Estilos específicos */
+header {
+   /* background-image: url('resources/headerimg.jpg');*/
+    background-size: cover;
+    
+    color: rgba(1, 1, 1, 0.778);
+}
+
+h1 {
+    font-size: 36px;
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .75);
+}
+h2{
+    text-align: center;
+    color: white;
+}
+a{
+    color: azure;
+}
+ .container{
+    background-color: rgba(240, 255, 255, 0.518);
+    border-radius: 15px;
+    box-shadow: 60px 30 px 30px;
+    text-align: center;
+ }
+ .perfil-img {
+    width: 150px; /* ajusta el tamaño según tus necesidades */
+    height: 150px; /* ajusta el tamaño según tus necesidades */
+    border-radius: 50%; /* crea el borde circular */
+    border: 2px solid #fff; /* añade un borde opcional */
+}
+.btnContacto{
+   outline: #333;
+    border-color: #333;
+    height: 128px;
+    width: 128px;
+}
+/* Estilos para las demás secciones y pie de página */
+/* Se pueden añadir según sea necesario */
