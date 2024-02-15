@@ -5,6 +5,7 @@ body {
     padding: 0;
     color: #333;
     height: 100%;
+    text-align: center;
 }
 
 .header-content {
@@ -64,7 +65,7 @@ h4{
     color: white;
 }
 a {
-    color: azure;
+    color:crimson;
     
 }
 p{
@@ -75,6 +76,7 @@ p{
     border-radius: 15px;
     box-shadow: 60px 30 px 30px;
     text-align: center;
+    overflow: hidden;
  }
  .perfil-img {
     width: 150px; /* ajusta el tamaño según tus necesidades */
@@ -96,5 +98,27 @@ p{
         min-height: 90%;
         z-index: -1;
 }
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+  }
+  
+  .slide {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    
+  }
+  .slide video {
+    width: 85%;
+    height: 85%;
+    overflow: visible;
+    
+  }
 /* Estilos para las demás secciones y pie de página */
 /* Se pueden añadir según sea necesario */
