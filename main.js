@@ -6,7 +6,9 @@ function GoToWeb(url)
 function ChangeVideo()
 {
     var vid = document.getElementById('background-video');
+    
     vid.src = 'resources/bgVidMobile.mp4';
+    alert(vid.src);
 }
 
 if(esNavegadorMovil())
