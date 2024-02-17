@@ -11,6 +11,7 @@ function ChangeVideo()
 
 if(esNavegadorMovil())
 {
+    alert("es mobil!")
     ChangeVideo();
 }
 function esNavegadorMovil() {
