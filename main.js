@@ -6,15 +6,12 @@ function GoToWeb(url)
 function ChangeVideo()
 {
     var vid = document.getElementById('background-video');
-    vid.src = 'resources/bgVid.mp4';
+    vid.src = 'resources/bgVidMobile.mp4';
 }
 
 if(esNavegadorMovil())
 {
-    screen.orientation.lock("portrait");
-    //var  vid = document.getElementById('background-video');
-    //$("#background-video").remove();
-    //document.body.style.backgroundImage ='https://w0.peakpx.com/wallpaper/958/696/HD-wallpaper-simple-luxury-dark-elegant-gold-golden-metallic-modern-shiny.jpg';
+    ChangeVideo();
 }
 function esNavegadorMovil() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
