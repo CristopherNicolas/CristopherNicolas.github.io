@@ -11,9 +11,10 @@ function ChangeVideo()
 
 if(esNavegadorMovil())
 {
-    var  vid = document.getElementById('background-video');
-    $("#background-video").remove();
-    document.body.style.backgroundImage ='https://w0.peakpx.com/wallpaper/958/696/HD-wallpaper-simple-luxury-dark-elegant-gold-golden-metallic-modern-shiny.jpg';
+    screen.orientation.lock("portrait");
+    //var  vid = document.getElementById('background-video');
+    //$("#background-video").remove();
+    //document.body.style.backgroundImage ='https://w0.peakpx.com/wallpaper/958/696/HD-wallpaper-simple-luxury-dark-elegant-gold-golden-metallic-modern-shiny.jpg';
 }
 function esNavegadorMovil() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
