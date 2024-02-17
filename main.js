@@ -12,12 +12,12 @@ function ChangeVideo()
         vid.load();
         vid.play();
 }
+onpageshow += ()=>{if(esNavegadorMovil())
+    {
+        alert("es mobil!")
+        ChangeVideo();
+    }}
 
-if(esNavegadorMovil())
-{
-    alert("es mobil!")
-    ChangeVideo();
-}
 function esNavegadorMovil() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
