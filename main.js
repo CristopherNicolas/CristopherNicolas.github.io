@@ -5,10 +5,12 @@ function GoToWeb(url)
 
 function ChangeVideo()
 {
-    var vid = document.getElementById('background-video');
-    
-    vid.src = 'resources/bgVidMobile.mp4';
-    alert(vid.src);
+    const src = document.getElementById('vidSrc');
+      const vid = document.getElementById('background-video');
+
+        src.src = 'resources/bgVidMobile.mp4';
+        vid.load();
+        vid.play();
 }
 
 if(esNavegadorMovil())

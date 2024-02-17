@@ -138,5 +138,12 @@ p{
 video {
     max-width: 100%; /* Para asegurarse de que los videos no superen su contenedor */
 }
+.vidSrcMobile{
+    src: 'resources/bgVidMobile.mp4';
+
+}   
+.vidSrc{
+    src: 'resources/bgVid.mp4';
+}
 /* Estilos para las demás secciones y pie de página */
 /* Se pueden añadir según sea necesario */
