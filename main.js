@@ -5,6 +5,7 @@ function GoToWeb(url)
 
 function ChangeVideo()
 {
+    if(!esNavegadorMovil()) return;
     const src = document.getElementById('vidSrc');
       const vid = document.getElementById('background-video');
 
@@ -12,11 +13,6 @@ function ChangeVideo()
         vid.load();
         vid.play();
 }
-onpageshow += ()=>{if(esNavegadorMovil())
-    {
-        alert("es mobil!")
-        ChangeVideo();
-    }}
 
 function esNavegadorMovil() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
