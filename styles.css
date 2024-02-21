@@ -148,6 +148,17 @@ video {
 .vidSrc{
     src: 'resources/bgVid.mp4';
 }
+.hiden{
+ opacity: 0;
+ filter: blur(5px);
+ transform: translateX(-100%);
+ transition: all 1s;
+}
+.show{
+opacity: 1;
+filter: blur(0);
+transform: translateX(0);
+}
 
 /* Estilos para las demás secciones y pie de página */
 /* Se pueden añadir según sea necesario */

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Cristopher Nicolas Faundez</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" ></script>
+    <script defer src="LazyLoad.js"> </script>
 </head>
 <body onload="ChangeVideo()">
     
     <header>
-        <div class="header-content">
+        <div class="header-content hiden">
             <h1 >Cristopher Faundez Portafolio</h1>
             <nav>
                 <ul>
@@ -22,7 +24,7 @@
             </nav>
         </div>
     </header>
-    <script src="main.js" ></script>
+    
     <section id="inicio">
         <!-- Sección de Inicio -->
         <!--<button onclick="ChangeVideo()"> cambair video</button> -->        
@@ -30,7 +32,7 @@
     <section id="proyectos">
         <!-- Sección de Proyectos -->
         <divc class="container">
-            <div class="container">
+            <div class="container hiden">
                     <h1>Programación de videojuegos</h1>
                     <iframe frameborder="0" src="https://itch.io/embed/2529400?border_width=3&amp;dark=true" width="556" height="171"><a href="https://crisfa.itch.io/blackjack">Blackjack by crisfa</a></iframe>
                     <iframe frameborder="0" src="https://itch.io/embed/2314001?border_width=0&amp;dark=true" width="550" height="165"><a href="https://crisfa.itch.io/last-call-of-freedom">Last call of freedom by crisfa</a></iframe>
@@ -39,20 +41,20 @@
         <!-- Crear una grilla con imagenes de render -->
         <br>
         <div class="carousel">
-            <div  class="slide"><img  src="resources/mai.png" alt="Imagen 1" id="animTarget"></div>
-            <div class="slide"><img src="resources/render3.png" alt="Imagen 2"id="animTarget"></div>
-            <div class="slide"><img src="resources/render4.png" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide"><img src="resources/render5.png" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide"><img src="resources/akRender.jfif" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide"><img src="resources/akrender2.jfif" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide"><img src="resources/dib1.jfif" alt="Imagen 3"id="animTarget"></div>
+            <div  class="slide hiden"><img  src="resources/mai.png" alt="Imagen 1" id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/render3.png" alt="Imagen 2"id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/render4.png" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/render5.png" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/akRender.jfif" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/akrender2.jfif" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide hiden"><img src="resources/dib1.jfif" alt="Imagen 3"id="animTarget"></div>
             
             <!-- Agrega más imágenes según sea necesario -->
         </div>
         <br>
         
         <h1>AR  (Meta Spark)</h1>
-        <div class="carousel">
+        <div class="carousel hiden">
                 <div class="slide" >
                     <video autoplay loop muted style="width: 85%;max-width: 100%;">
                         <source src="resources/ar.mp4" type="video/mp4" />
@@ -66,7 +68,7 @@
         </div>
             
           <br>
-        <div class="container">
+        <div class="container hiden">
             <h1 >3D (Blender + Substance Painter)</h1>
             <div class="container" style=" display:flex; justify-content:center;">
                 <div class="sketchfab-embed-wrapper"> <iframe title="Mai Sakurajima model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/842bc7f9b13044dd92dd7dc326705dde/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/mai-sakurajima-model-842bc7f9b13044dd92dd7dc326705dde?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Mai Sakurajima model </a> by <a href="https://sketchfab.com/cristopher.faundez?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Alone dev games </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
@@ -76,7 +78,7 @@
             </div>
         </div>
     </section>
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="hiden">
         <!-- Sección "Sobre Mí" -->
         
         <div class="container">
@@ -92,7 +94,7 @@
             
         </div>
     </section>
-    <section id="contacto">
+    <section id="contacto" class=" hiden">
         <br>
         <!-- Sección de Contacto -->
         <div style="text-align: center; background-color: rgba(0, 0, 0, .4); padding: 30px; ">
