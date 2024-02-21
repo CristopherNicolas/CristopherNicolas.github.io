@@ -6,7 +6,7 @@
     <title>Portafolio de Cristopher Nicolas Faundez</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onafterprint="ChangeVideo()">
+<body onload="ChangeVideo()">
     
     <header>
         <div class="header-content">
@@ -25,9 +25,7 @@
     <script src="main.js" ></script>
     <section id="inicio">
         <!-- Sección de Inicio -->
-        <!--<button onclick="ChangeVideo()"> cambair video</button> -->
-        <button onclick="ChangeVideo()"> cambair video</button>
-        
+        <!--<button onclick="ChangeVideo()"> cambair video</button> -->        
     </section>
     <section id="proyectos">
         <!-- Sección de Proyectos -->
@@ -41,13 +39,13 @@
         <!-- Crear una grilla con imagenes de render -->
         <br>
         <div class="carousel">
-            <div class="slide"><img src="resources/mai.png" alt="Imagen 1"></div>
-            <div class="slide"><img src="resources/render3.png" alt="Imagen 2"></div>
-            <div class="slide"><img src="resources/render4.png" alt="Imagen 3"></div>
-            <div class="slide"><img src="resources/render5.png" alt="Imagen 3"></div>
-            <div class="slide"><img src="resources/akRender.jfif" alt="Imagen 3"></div>
-            <div class="slide"><img src="resources/akrender2.jfif" alt="Imagen 3"></div>
-            <div class="slide"><img src="resources/dib1.jfif" alt="Imagen 3"></div>
+            <div  class="slide"><img  src="resources/mai.png" alt="Imagen 1" id="animTarget"></div>
+            <div class="slide"><img src="resources/render3.png" alt="Imagen 2"id="animTarget"></div>
+            <div class="slide"><img src="resources/render4.png" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide"><img src="resources/render5.png" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide"><img src="resources/akRender.jfif" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide"><img src="resources/akrender2.jfif" alt="Imagen 3"id="animTarget"></div>
+            <div class="slide"><img src="resources/dib1.jfif" alt="Imagen 3"id="animTarget"></div>
             
             <!-- Agrega más imágenes según sea necesario -->
         </div>
@@ -55,7 +53,7 @@
         
         <h1>AR  (Meta Spark)</h1>
         <div class="carousel">
-                <div class="slide">
+                <div class="slide" >
                     <video autoplay loop muted style="width: 85%;max-width: 100%;">
                         <source src="resources/ar.mp4" type="video/mp4" />
                     </video>
@@ -83,7 +81,7 @@
         
         <div class="container">
             <h1>Sobre mi </h1>
-            <img class="perfil-img" src="resources/profileimg.jfif">
+            <img class="perfil-img" src="resources/profileimg.jfif" id="animTarget">
             <p>¡Bienvenidos a mi portafolio web! Soy alguien apasionado por la tecnología, el arte y el desarrollo personal. En este espacio, busco plasmar lo mejor de mí en esta breve pero significativa existencia. Aquí encontrarás una muestra de mi trabajo, donde convergen mis intereses y habilidades. ¡Explora y descubre más sobre mí y mi camino en este emocionante viaje de crecimiento y creación! </p>
             <h3>Habilidades</h3>
             <h4>C#, ASP.Net, HTML, CSS, JS, SQL Server, Python</h4>

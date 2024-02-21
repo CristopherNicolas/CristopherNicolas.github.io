@@ -1,3 +1,5 @@
+
+
 function GoToWeb(url)
 {
     document.location.href = url;
