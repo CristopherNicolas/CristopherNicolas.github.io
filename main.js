@@ -21,7 +21,16 @@ function esNavegadorMovil() {
 }
 function ShowHideCertificate()
 {
-    var div = document.getElementById()
+    var div = document.getElementById("certificado")
+    if(div.style.display === "none")
+    {
+        div.style.display = "block";
+
+    }
+    else
+    {
+        div.style.display = "none";
+    }
 }
 
 
