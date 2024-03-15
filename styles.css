@@ -3,9 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
     height: 100%;
-    background-color: #333;
+    background-color: white ;
    
 }
 
@@ -47,39 +46,55 @@ header {
 
 h1 {
     font-size: 36px;
-    color: white;
-    background-color: #000000bf;
+    color: black;
     padding: 10px;
+    border-radius: 10px;
 }
 h2{
     text-align: center;
-    color: white;
+    color: black;
 }
 h3{
     text-align: center;
-    color: white;
-    background-color: rgba(0,0,0,.65);
+    color: black;
     padding: 10px;
 }
 h4{
     text-align: center;
-    color: white;
+    color: black;
 }
 a {
-    color:crimson;
-    background-color: rgba(0, 0, 0, .65);
+    color:black;
     border-radius: 35px;
     padding: 3px;
 }
 p{
-    color: white;
+    color: black;
 }
  .container{
-    background-color: rgba(1, 1, 1, 0.5);
+    
     border-radius: 15px;
     box-shadow: 60px 30 px 30px;
     text-align: center;
     overflow: hidden;
+ }
+ .gitContainer
+ {
+    background-color: #4A4A4A;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+
+ }
+ .gitContainer h2{
+    color: white;
+ }
+ .gitContainer button
+ {
+        color: #333;
+        width: 320px;
+        height: 40px;
+        border-radius: 25px;
  }
  .perfil-img {
     width: 256px; /* ajusta el tamaño según tus necesidades */
@@ -135,7 +150,7 @@ p{
 }
 
 video {
-    max-width: 100%; /* Para asegurarse de que los videos no superen su contenedor */
+    max-width: 10%; /* Para asegurarse de que los videos no superen su contenedor */
 }
 .vidSrcMobile{
     src: 'resources/bgVidMobile.mp4';

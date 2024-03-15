@@ -19,6 +19,10 @@ function ChangeVideo()
 function esNavegadorMovil() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+function ShowHideCertificate()
+{
+    var div = document.getElementById()
+}
 
 
 

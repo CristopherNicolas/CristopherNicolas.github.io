@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Cristopher Nicolas Faundez</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="main.js" ></script>
     <script defer src="LazyLoad.js"> </script>
 </head>
 <body onload="ChangeVideo()">
-    
     <header>
         <div class="header-content hiden">
             <h1 >Cristopher Faundez Portafolio</h1>
@@ -29,17 +30,45 @@
         <!-- Sección de Inicio -->
         <!--<button onclick="ChangeVideo()"> cambair video</button> -->        
     </section>
+    <section id="sobre-mi" class="hiden">
+        <!-- Sección "Sobre Mí" -->
+        
+        <div class="container">
+            <h1>Sobre mi </h1>
+            <img class="perfil-img" src="resources/profileimg.jfif" id="animTarget">
+            <p>¡Bienvenidos a mi portafolio web! Soy alguien apasionado por la tecnología, el arte y el desarrollo personal. En este espacio, busco plasmar lo mejor de mí en esta breve pero significativa existencia. Aquí encontrarás una muestra de mi trabajo, donde convergen mis intereses y habilidades. ¡Explora y descubre más sobre mí y mi camino en este emocionante viaje de crecimiento y creación! </p>
+            <h3>Habilidades</h3>
+            <h4>C#, ASP.Net, HTML, CSS, JS, SQL Server, Python</h4>
+            <h4>Unity,Blender,Substance painter,Photoshop</h4>
+            <br>
+        </div>
+        <a href="resources/cv.pdf" download="CristopherFaundezCV(EN).pdf" target="_blank">Download CV (English) </a>
+        <a href="resources/cvEs.pdf" download="CristopherFaundezCV(ES)" target="_blank">Descargar CV (Español) </a>
+        
+        <div class="container">
+            <embed src="resources/certificado.pdf" type="application/pdf" width="100%" height="600px" />
+        </div>
+        
+    </section>
+
     <section id="proyectos">
         <!-- Sección de Proyectos -->
-        <div class="container">
+        <div class="gitContainer">
             <h2>Repostorios en Github:</h2>
-             <di>
-                <a href="/repositories.html">
-                    <button> go to page!</button>
-                </a>
-            </di>
+            <div >
+                <h2>esta pagina web</h2>
+                <a><button>This website (vanilla js + html +css)</button></a>
+            </div>
+            <div>
+                <h2>MOBA (Unity Engine) </h2>
+                <a><button>Go to repository</button></a>
+            </div>
+            <div>
+                <h2> Blackjack con Unity</h2>
+                <a><button>Go to repository</button></a>
+            </div>
         </div>
-
+           
 
         <divc class="container">
             <div class="container hiden">
@@ -50,16 +79,16 @@
         </div>
         <!-- Crear una grilla con imagenes de render -->
         <br>
-        <div class="carousel">
-            <div  class="slide hiden"><img  src="resources/mai.png" alt="Imagen 1" id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/render3.png" alt="Imagen 2"id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/render4.png" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/render5.png" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/akRender.jfif" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/akrender2.jfif" alt="Imagen 3"id="animTarget"></div>
-            <div class="slide hiden"><img src="resources/dib1.jfif" alt="Imagen 3"id="animTarget"></div>
-            
-            <!-- Agrega más imágenes según sea necesario -->
+        <div id="renders">
+            <h2>3D modeling and texturing with Blender</h2>
+                <div class="carousel">
+                    <div class="slide hiden"><img src="resources/render3.png" alt="Imagen 2"id="animTarget"></div>
+                    <div class="slide hiden"><img src="resources/render4.png" alt="Imagen 3"id="animTarget"></div>
+                    <div class="slide hiden"><img src="resources/akRender.jfif" alt="Imagen 3"id="animTarget"></div>
+                    <div class="slide hiden"><img src="resources/akrender2.jfif" alt="Imagen 3"id="animTarget"></div>
+                    
+                    <!-- Agrega más imágenes según sea necesario -->
+                </div>
         </div>
         <br>
         
@@ -78,32 +107,16 @@
         </div>
             
           <br>
-        <div class="container hiden">
+        <div class="container ">
             <h1 >3D (Blender + Substance Painter)</h1>
-            <div class="container" style=" display:flex; justify-content:center;">
-                <div class="sketchfab-embed-wrapper"> <iframe title="Mai Sakurajima model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/842bc7f9b13044dd92dd7dc326705dde/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/mai-sakurajima-model-842bc7f9b13044dd92dd7dc326705dde?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Mai Sakurajima model </a> by <a href="https://sketchfab.com/cristopher.faundez?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Alone dev games </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=842bc7f9b13044dd92dd7dc326705dde" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+            <div class="container hiden" style=" display:flex; justify-content:center;">
                 <div class="sketchfab-embed-wrapper"> <iframe title="Triana" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/764418d352d0450fa79370bd6c339115/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/triana-764418d352d0450fa79370bd6c339115?utm_medium=embed&utm_campaign=share-popup&utm_content=764418d352d0450fa79370bd6c339115" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Triana </a> by <a href="https://sketchfab.com/cristopher.faundez?utm_medium=embed&utm_campaign=share-popup&utm_content=764418d352d0450fa79370bd6c339115" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Alone dev games </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=764418d352d0450fa79370bd6c339115" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
                 <div class="sketchfab-embed-wrapper"> <iframe title="Japanese female shoe" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d69501fb953349a7ad5e1843d2aabf33/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/japanese-female-shoe-d69501fb953349a7ad5e1843d2aabf33?utm_medium=embed&utm_campaign=share-popup&utm_content=d69501fb953349a7ad5e1843d2aabf33" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Japanese female shoe </a> by <a href="https://sketchfab.com/cristopher.faundez?utm_medium=embed&utm_campaign=share-popup&utm_content=d69501fb953349a7ad5e1843d2aabf33" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Alone dev games </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=d69501fb953349a7ad5e1843d2aabf33" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
                 <div class="sketchfab-embed-wrapper"> <iframe title="ak47" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/9bfd3115bd904648bdfbd734c5eb57d6/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/ak47-9bfd3115bd904648bdfbd734c5eb57d6?utm_medium=embed&utm_campaign=share-popup&utm_content=9bfd3115bd904648bdfbd734c5eb57d6" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> ak47 </a> by <a href="https://sketchfab.com/cristopher.faundez?utm_medium=embed&utm_campaign=share-popup&utm_content=9bfd3115bd904648bdfbd734c5eb57d6" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Alone dev games </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9bfd3115bd904648bdfbd734c5eb57d6" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
             </div>
         </div>
     </section>
-    <section id="sobre-mi" class="hiden">
-        <!-- Sección "Sobre Mí" -->
-        
-        <div class="container" style="background-color: #15141477;">
-            <h1>Sobre mi </h1>
-            <img class="perfil-img" src="resources/profileimg.jfif" id="animTarget">
-            <h4>¡Bienvenidos a mi portafolio web! Soy alguien apasionado por la tecnología, el arte y el desarrollo personal. En este espacio, busco plasmar lo mejor de mí en esta breve pero significativa existencia. Aquí encontrarás una muestra de mi trabajo, donde convergen mis intereses y habilidades. ¡Explora y descubre más sobre mí y mi camino en este emocionante viaje de crecimiento y creación! </p>
-            <h3>Habilidades</h3>
-            <h4>C#, ASP.Net, HTML, CSS, JS, SQL Server, Python</h4>
-            <h4>Unity,Blender,Substance painter,Photoshop</h4>
-            <br>
-        </div>
-        <a href="resources/cv.pdf" download="CristopherFaundezCV(EN).pdf" target="_blank">Download CV (English) </a>
-        <a href="resources/cvEs.pdf" download="CristopherFaundezCV(ES)" target="_blank">Descargar CV (Español) </a>
-        
-    </section>
+   
     <section id="contacto" class=" hiden">
         <br>
         <!-- Sección de Contacto -->
@@ -117,9 +130,9 @@
         <!-- Pie de Página -->
     </footer>
     
-        <video id="background-video" autoplay loop muted class="vid">
-            <source class="vidSrc" id="vidSrc" src="resources/bgVid.mp4" type="video/mp4" />
-        </video>
+       <!--<video id="background-video" autoplay loop muted class="vid"> --> 
+            <!-- <source class="vidSrc" id="vidSrc" src="resources/bgVid.mp4" type="video/mp4" /> -->
+        <!-- </video> -->
    
 </body>
 </html>
