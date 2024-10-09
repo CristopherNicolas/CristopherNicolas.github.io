@@ -1,0 +1,6 @@
+
+
+//RECUERDA HACER NPM RUN BUILD
+git add -A
+git commit -m "deploy configgggggg" 
+git push
