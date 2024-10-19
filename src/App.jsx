@@ -1,7 +1,7 @@
 import "./App.css";
 import "./components/ProfileImage";
 import GridComp, { ProfileImage } from "./components/ProfileImage";
-import Header from "./components/header";
+import Header from "./components/Header";
 import ImageGrid from "./components/ImageGrid";
 
 //iamgenes para la grilla
