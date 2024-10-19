@@ -1,5 +1,4 @@
 import unityImg from "../assets/images/Unity-Logo.png";
-import nintendoImg from "../assets/images/nintendoLogo.png";
 import blenderImg from "../assets/images/blenderLogo.png";
 import cSharpImg from "../assets/images/Logo_C_sharp.svg.png";
 
