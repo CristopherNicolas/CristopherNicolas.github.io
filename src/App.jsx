@@ -1,37 +1,28 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import "./components/GridComp";
-import GridComp from "./components/GridComp";
+import "./components/ProfileImage";
+import GridComp, { ProfileImage } from "./components/ProfileImage";
+import Header from "./components/header";
+import ImageGrid from "./components/ImageGrid";
 
+//iamgenes para la grilla
+import image1 from "./assets/resources/mai.png";
+import image2 from "./assets/resources/render3.png";
+import image3 from "./assets/resources/render4.png";
+import image4 from "./assets/resources/render5.png";
+import image5 from "./assets/resources/render4.png";
+import image6 from "./assets/resources/render4.png";
+import Habilidades from "./components/Habilidades";
 function App() {
-  const [count, setCount] = useState(0);
-
+  const imgs = [image1, image2, image3, image4, image5, image6];
   return (
     <>
-      <GridComp></GridComp>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{ textAlign: "center" }}>
+        <Header></Header>
+        <ProfileImage></ProfileImage>
+        <br />
+        <Habilidades></Habilidades>
       </div>
-      <h1>Developed with:</h1>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ImageGrid imageList={imgs}></ImageGrid>
     </>
   );
 }
