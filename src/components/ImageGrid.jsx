@@ -22,13 +22,13 @@ const ImageGrid = ({ imageList }) => {
 const styles = {
   gridContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
     gap: "10px",
     padding: "20px",
   },
   image: {
-    width: "100%",
-    height: "350px",
+    width: "90%",
+    height: "250px",
     objectFit: "cover",
     borderRadius: "10px",
   },

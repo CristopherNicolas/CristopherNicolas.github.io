@@ -6,6 +6,7 @@ const Header = ({ onLinkHover }) => {
       <h1 style={styles.title}>Cris | Game Developer & Programmer</h1>
       <nav aria-label="Main Navigation">
         <ul style={styles.navList}>
+          <li></li>
           <li>
             <a
               href="#home"
@@ -50,7 +51,7 @@ const Header = ({ onLinkHover }) => {
 
 const styles = {
   header: {
-    backgroundColor: "#1a1a2e",
+    backgroundColor: "rgba(26, 26, 46, 0.8)",
     padding: "21px",
     color: "white",
     textAlign: "center",

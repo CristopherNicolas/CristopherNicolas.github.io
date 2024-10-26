@@ -39,3 +39,60 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Estilo para el video de fondo */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta para que el video ocupe toda la pantalla */
+  z-index: -1; /* Envía el video al fondo */
+  filter: brightness(0.5); /* Oscurece un poco el video */
+}
+
+/* Estilo para el contenido principal */
+.content {
+  position: relative; /* Permite posicionar elementos sobre el video */
+  z-index: 1; /* Asegura que esté por encima del video */
+  text-align: center;
+  color: white; /* Texto blanco para contraste */
+  padding: 20px;
+}
+
+/* Estilo adicional para un diseño más elegante */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Evita barras de desplazamiento */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor de la barra social */
+.social-bar {
+  display: flex;
+  justify-content: center; /* Centra los íconos horizontalmente */
+  gap: 20px; /* Espacio entre íconos */
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Estilo de los íconos sociales */
+.social-icon {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: grayscale(100%); /* Íconos en blanco y negro por defecto */
+  cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
+.social-icon:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  filter: grayscale(0%); /* Recupera el color del ícono */
+}
