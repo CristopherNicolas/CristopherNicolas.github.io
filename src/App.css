@@ -65,7 +65,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Evita barras de desplazamiento */
+  /*overflow: hidden; /* Evita barras de desplazamiento */
 }
 
 img {
