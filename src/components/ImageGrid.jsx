@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import "../styles/ImageGrid.css"; // Importar el archivo CSS
 
 const ImageGrid = ({ imageList }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+
+  // Abrir el modal
+  const openModal = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  // Cerrar el modal
+  const closeModal = () => {
+    setCurrentImageIndex(null);
+  };
+
+  // Avanzar a la siguiente imagen
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+  };
+
+  // Retroceder a la imagen anterior
+  const prevImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + imageList.length) % imageList.length
+    );
+  };
+
   return (
     <div style={styles.gridContainer}>
       {imageList.length === 0 ? (
@@ -11,9 +36,32 @@ const ImageGrid = ({ imageList }) => {
             key={index}
             src={image}
             alt={`image-${index}`}
-            style={styles.image}
+            className="image"
+            onClick={() => openModal(index)} // Abrir modal al hacer clic
           />
         ))
+      )}
+
+      {/* Modal */}
+      {currentImageIndex !== null && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <img
+              src={imageList[currentImageIndex]}
+              alt={`image-${currentImageIndex}`}
+              className="modal-image"
+            />
+            <button className="prev" onClick={prevImage}>
+              &#8249;
+            </button>
+            <button className="next" onClick={nextImage}>
+              &#8250;
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
@@ -25,12 +73,6 @@ const styles = {
     gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
     gap: "10px",
     padding: "20px",
-  },
-  image: {
-    width: "90%",
-    height: "250px",
-    objectFit: "cover",
-    borderRadius: "10px",
   },
   placeholder: {
     textAlign: "center",

@@ -33,10 +33,13 @@ function App() {
         <Header />
         <ProfileImage />
         <Habilidades />
-        <Unity
-          unityProvider={unityProvider}
-          style={{ width: 800, height: 600 }}
-        />
+
+        <div id="projects">
+          <Unity
+            unityProvider={unityProvider}
+            style={{ width: screen.width / 2, height: screen.height / 2 }}
+          />
+        </div>
         <ImageGrid imageList={imgs} />
         <Rss></Rss>
       </div>
