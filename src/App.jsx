@@ -13,7 +13,7 @@ import image5 from "./assets/resources/render4.png";
 import image6 from "./assets/resources/render4.png";
 import Habilidades from "./components/Habilidades";
 import Rss from "./components/Rss";
-import GitHubProjects from "./components/GithubProjects";
+import GithubProjects from "./components/GithubProjects";
 import { InstagramEmbed } from "react-social-media-embed";
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
             }}
           />
         </div>
-        <GitHubProjects username={"cristophernicolas"} />
+        <GithubProjects username={"cristophernicolas"} />
         <ImageGrid imageList={imgs} />
         <Rss />
 
