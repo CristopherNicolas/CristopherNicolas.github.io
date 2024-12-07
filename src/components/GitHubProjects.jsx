@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const GitHubProjects = ({ username }) => {
+const GithubProjects = ({ username }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -140,4 +140,4 @@ const styles = {
   },
 };
 
-export default GitHubProjects;
+export default GithubProjects;
