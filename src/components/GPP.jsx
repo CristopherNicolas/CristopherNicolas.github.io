@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const GithubProjects = ({ username }) => {
+const GPP = ({ username }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -140,4 +140,4 @@ const styles = {
   },
 };
 
-export default GithubProjects;
+export default GPP;
