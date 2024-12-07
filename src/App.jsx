@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import ImageGrid from "./components/ImageGrid";
 import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-// Imágenes para la grilla
 import image1 from "./assets/resources/mai.png";
 import image2 from "./assets/resources/render3.png";
 import image3 from "./assets/resources/render4.png";
