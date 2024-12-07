@@ -53,6 +53,7 @@ function App() {
         <ProfileImage />
         <Habilidades />
 
+        <h2>React + Unity WebGl</h2>
         <div id="projects">
           <Unity
             unityProvider={unityProvider}
