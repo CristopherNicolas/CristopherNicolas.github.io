@@ -90,12 +90,5 @@ img {
   width: 64px;
   height: 64px;
   transition: transform 0.3s, filter 0.3s;
-  filter: grayscale(100%); /* Íconos en blanco y negro por defecto */
   cursor: pointer;
-}
-
-/* Efecto al pasar el mouse */
-.social-icon:hover {
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-  filter: grayscale(0%); /* Recupera el color del ícono */
 }
