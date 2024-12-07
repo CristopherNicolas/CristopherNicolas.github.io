@@ -31,15 +31,18 @@ function App() {
     {
       url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1",
       alt: "Post 1",
+      w: 450,
     },
     {
       url: "https://www.instagram.com/p/C8s6R6XNxm6/?img_index=2",
       alt: "Post 2",
+      w: 450,
     },
-    { url: "https://www.instagram.com/p/C294tWbumVp/", alt: "Post 3" },
+    { url: "https://www.instagram.com/p/C294tWbumVp/", alt: "Post 3", w: 350 },
     {
       url: "https://www.instagram.com/p/C-312WVNukJ/?img_index=1",
       alt: "post 4",
+      w: 450,
     },
   ];
 
@@ -55,8 +58,8 @@ function App() {
           <Unity
             unityProvider={unityProvider}
             style={{
-              width: screen.width / 2,
-              height: screen.height / 2,
+              width: 640,
+              height: 420,
               borderRadius: 25,
             }}
           />
@@ -69,25 +72,27 @@ function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
-            gap: "20px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "10px",
             justifyContent: "center",
             alignItems: "center",
-            padding: "20px",
+            padding: "10px",
           }}
         >
-          {instagramPosts.map((post, index) => (
-            <div
-              key={index}
-              style={{ display: "flex", justifyContent: "center" }}
-            >
-              <InstagramEmbed
-                url={post.url}
-                width={500}
-                maxWidth={500}
-                alt={post.alt}
-              />
-            </div>
+          {instagramPosts.map((post, index, w) => (
+            <>
+              <div
+                key={index}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <InstagramEmbed
+                  url={post.url}
+                  width={w}
+                  maxWidth={500}
+                  alt={post.alt}
+                />
+              </div>
+            </>
           ))}
         </div>
       </div>
