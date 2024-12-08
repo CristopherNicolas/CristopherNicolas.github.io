@@ -19,7 +19,7 @@ import GPP from "./components/GPP";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
   const { unityProvider } = useUnityContext({
-    loaderUrl: "src/build/webGlBuild.loader.js",
+    loaderUrl: "src/build/webGlBuild.loader.js.gz",
     dataUrl: "src/build/webGlBuild.data.gz",
     frameworkUrl: "src/build/webGlBuild.framework.js.gz",
     codeUrl: "src/build/webGlBuild.wasm.gz",
