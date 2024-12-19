@@ -11,7 +11,7 @@ export function ProfileImage() {
         width={100}
         height={100}
         className="logo"
-        style={{ borderRadius: "50%" }} // Ejemplo de estilo
+        style={{ borderRadius: "50%" }} // Ejemplo de estilo par
       />
     </>
   );
