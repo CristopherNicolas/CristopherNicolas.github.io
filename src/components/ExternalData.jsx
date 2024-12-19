@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import "../styles/ExternalData.css";
 
 const ExternalData = () => {
-  const [url, setUrl] = useState(""); // Almacena la URL ingresada
-  const [images, setImages] = useState([]); // Guarda las imágenes extraídas
-  const [error, setError] = useState(""); // Guarda errores en caso de fallo
+  const [url, setUrl] = useState("");
+  const [images, setImages] = useState([]);
+  const [error, setError] = useState("");
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleAttack = async () => {
-    setError(""); // Resetea el error previo
-    setImages([]); // Limpia la lista de imágenes anteriores
+    setError("");
+    setImages([]);
 
     if (!url) {
       setError("Por favor ingresa una URL válida.");
@@ -20,72 +22,61 @@ const ExternalData = () => {
         throw new Error(`Error al acceder al sitio: ${response.statusText}`);
       }
 
-      const html = await response.text(); // Obtén el HTML como texto
-      const parser = new DOMParser(); // Crea un parser de DOM
+      const html = await response.text();
+      const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
+      const imageElements = doc.getElementsByTagName("img");
+      const imageUrls = Array.from(imageElements)
+        .map((img) => img.src)
+        .filter((src) => src && src.startsWith("http"));
 
-      // Encuentra todas las etiquetas <img> y extrae sus URLs
-      const imgTags = doc.querySelectorAll("img");
-      const imgUrls = Array.from(imgTags).map((img) => img.src);
-
-      if (imgUrls.length === 0) {
-        setError("No se encontraron imágenes en el sitio proporcionado.");
-      } else {
-        setImages(imgUrls);
-      }
+      setImages(imageUrls);
     } catch (err) {
-      setError(`Error al procesar la solicitud: ${err.message}`);
+      setError(err.message);
     }
   };
 
   return (
-    <>
-      <h2>Site Scraping</h2>
-      <input
-        placeholder="Enter URL of site to scrape"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        style={{
-          padding: "8px",
-          width: "300px",
-          marginRight: "10px",
-          borderRadius: "4px",
-          border: "1px solid #ccc",
-        }}
-      />
-      <button
-        onClick={handleAttack}
-        style={{
-          padding: "8px 16px",
-          backgroundColor: "#28a745",
-          color: "#fff",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-        }}
-      >
-        Attack
-      </button>
-      <div style={{ marginTop: "20px" }}>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {images.length > 0 && (
-          <>
-            <h3>Found Images:</h3>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {images.map((src, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
-                  <img
-                    src={src}
-                    alt={`Imagen ${index + 1}`}
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+    <div className="external-data-container">
+      <div className="input-section">
+        <input
+          type="text"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="Ingresa una URL para obtener las imágenes (algunas URL pueden no funcionar)"
+          className="url-input"
+        />
+        <button onClick={handleAttack} className="fetch-button">
+          Obtener Imágenes
+        </button>
       </div>
-    </>
+
+      {error && <div className="error-message">{error}</div>}
+
+      {images.length > 0 && (
+        <div className="collapsible-section">
+          <div
+            className="collapsible-header"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            <h3>Imágenes Encontradas ({images.length})</h3>
+            <span className={`arrow ${isCollapsed ? "collapsed" : ""}`}>▼</span>
+          </div>
+
+          <div
+            className={`collapsible-content ${isCollapsed ? "collapsed" : ""}`}
+          >
+            <div className="image-grid">
+              {images.map((imgUrl, index) => (
+                <div key={index} className="image-item">
+                  <img src={imgUrl} alt={`Scraped ${index}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

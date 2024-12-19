@@ -58,7 +58,6 @@ function App() {
 
   return (
     <>
-      <ExternalData></ExternalData>
       <div className="content">
         <Header />
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
@@ -67,6 +66,7 @@ function App() {
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <Habilidades />
         </div>
+        <ExternalData></ExternalData>
         <h1 className="hidden" ref={(el) => elementsRef.current.push(el)}>
           My Projects
         </h1>
@@ -100,7 +100,7 @@ function App() {
               <InstagramEmbed
                 url={post.url}
                 width={post.w}
-                maxWidth={500}
+                maxwidth={500}
                 alt={post.alt}
               />
             </div>
