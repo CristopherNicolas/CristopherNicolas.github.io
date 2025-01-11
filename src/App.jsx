@@ -20,8 +20,13 @@ function App() {
 
   const instagramPosts = [
     {
-      url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1",
+      url: "https://www.instagram.com/criztopher_nicolas/p/DEgoRz8MXTt/",
       alt: "Post 1",
+      w: 450,
+    },
+    {
+      url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1",
+      alt: "Post 2",
       w: 450,
     },
     {
