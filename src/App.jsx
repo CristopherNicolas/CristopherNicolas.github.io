@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./App.css";
 import "./components/ProfileImage";
-import GridComp, { ProfileImage } from "./components/ProfileImage";
 import Header from "./components/Header";
 import ImageGrid from "./components/ImageGrid";
 import Habilidades from "./components/Habilidades";
@@ -65,19 +64,21 @@ function App() {
     <>
       <div className="content">
         <Header />
-        <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
-          <ProfileImage />
-        </div>
+        <div
+          className="hidden"
+          ref={(el) => elementsRef.current.push(el)}
+        ></div>
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <Habilidades />
         </div>
-        <ExternalData></ExternalData>
+
         <h1 className="hidden" ref={(el) => elementsRef.current.push(el)}>
           My Projects
         </h1>
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <GPP username={"cristophernicolas"} />
         </div>
+        <ExternalData></ExternalData>
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <ImageGrid imageList={imgs} />
         </div>

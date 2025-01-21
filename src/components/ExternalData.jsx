@@ -38,16 +38,17 @@ const ExternalData = () => {
 
   return (
     <div className="external-data-container">
+      <h2>perform web scraping on a website and obtain the images</h2>
       <div className="input-section">
         <input
           type="text"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="Ingresa una URL para obtener las imágenes (algunas URL pueden no funcionar)"
+          placeholder="Enter a URL to get the images (some URLs may not work)"
           className="url-input"
         />
         <button onClick={handleAttack} className="fetch-button">
-          Obtener Imágenes
+          Get images
         </button>
       </div>
 

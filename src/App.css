@@ -60,7 +60,7 @@
   z-index: 1; /* Asegura que esté por encima del video */
   text-align: center;
   color: white; /* Texto blanco para contraste */
-  padding: 20px;
+  padding: 5px;
 }
 
 /* Estilo adicional para un diseño más elegante */
