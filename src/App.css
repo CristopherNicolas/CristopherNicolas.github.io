@@ -35,7 +35,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
 .read-the-docs {
@@ -56,7 +56,7 @@
 
 /* Estilo para el contenido principal */
 .content {
-  position: relative; /* Permite posicionar elementos sobre el video */
+  position: -ms-page; /* Permite posicionar elementos sobre el video */
   z-index: 1; /* Asegura que esté por encima del video */
   text-align: center;
   color: white; /* Texto blanco para contraste */
@@ -68,6 +68,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: black;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   /*overflow: hidden; /* Evita barras de desplazamiento */
 }
 
