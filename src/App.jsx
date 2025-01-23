@@ -11,8 +11,9 @@ import image1 from "./assets/resources/mai.png";
 import image2 from "./assets/resources/render3.png";
 import image3 from "./assets/resources/render4.png";
 import image4 from "./assets/resources/render5.png";
-import image5 from "./assets/resources/render4.png";
-import image6 from "./assets/resources/render4.png";
+import image5 from "./assets/resources/image.png";
+import image6 from "./assets/resources/image2.png";
+import video1 from "./assets/resources/bgVid.mp4";
 import ExternalData from "./components/ExternalData";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
@@ -78,14 +79,26 @@ function App() {
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <GPP username={"cristophernicolas"} />
         </div>
-        <ExternalData></ExternalData>
+
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <ImageGrid imageList={imgs} />
+
+          <h2>2D skeleton animation in Unity</h2>
+          <div className="video-container">
+            <video autoPlay loop muted>
+              <source src={video1} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
-        <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
+        <ExternalData></ExternalData>
+        <div
+          id="contact"
+          className="hidden"
+          ref={(el) => elementsRef.current.push(el)}
+        >
           <Rss />
         </div>
-
         <div
           style={{
             display: "grid",

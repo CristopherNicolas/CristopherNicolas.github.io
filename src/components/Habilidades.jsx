@@ -8,7 +8,7 @@ import cmm from "../assets/images/cmm.png";
 export default function Habilidades() {
   return (
     <>
-      <h1>Abilities</h1>
+      <h1>Skills</h1>
       <img src={unityImg} className="logo"></img>
       <img src={cSharpImg} className="logo"></img>
       <img src={cmm} className="logo"></img>

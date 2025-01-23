@@ -65,11 +65,12 @@
 
 /* Estilo adicional para un diseño más elegante */
 body {
+
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: black;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  /*overflow: hidden; /* Evita barras de desplazamiento */
+  overflow-x: hidden; /* Evita barras de desplazamiento */
 }
 
 img {

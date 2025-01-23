@@ -2,26 +2,30 @@ import React, { useState } from "react";
 import "../styles/ImageGrid.css"; // Importar el archivo CSS
 
 const ImageGrid = ({ imageList }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  // Función para determinar si el archivo es una imagen
+  const isImage = (file) => file.match(/\.(jpeg|jpg|gif|png)$/i);
+  const isVideo = (file) => file.match(/\.(mp4|webm|ogg)$/i);
 
   // Abrir el modal
   const openModal = (index) => {
-    setCurrentImageIndex(index);
+    setCurrentIndex(index);
   };
 
   // Cerrar el modal
   const closeModal = () => {
-    setCurrentImageIndex(null);
+    setCurrentIndex(null);
   };
 
-  // Avanzar a la siguiente imagen
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+  // Avanzar a la siguiente imagen/video
+  const nextMedia = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % imageList.length);
   };
 
-  // Retroceder a la imagen anterior
-  const prevImage = () => {
-    setCurrentImageIndex(
+  // Retroceder a la imagen/video anterior
+  const prevMedia = () => {
+    setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + imageList.length) % imageList.length
     );
   };
@@ -29,35 +33,55 @@ const ImageGrid = ({ imageList }) => {
   return (
     <div style={styles.gridContainer}>
       {imageList.length === 0 ? (
-        <p style={styles.placeholder}>Hover over a section to see images</p>
+        <p style={styles.placeholder}>Hover over a section to see media</p>
       ) : (
-        imageList.map((image, index) => (
-          <img
+        imageList.map((file, index) => (
+          <div
             key={index}
-            src={image}
-            alt={`image-${index}`}
-            className="image"
-            onClick={() => openModal(index)} // Abrir modal al hacer clic
-          />
+            className="media-container"
+            onClick={() => openModal(index)}
+          >
+            {isImage(file) ? (
+              <img src={file} alt={`media-${index}`} className="image" />
+            ) : isVideo(file) ? (
+              <video
+                src={file}
+                className="video"
+                alt={`media-${index}`}
+                muted
+                loop
+                preload="metadata"
+              />
+            ) : null}
+          </div>
         ))
       )}
 
       {/* Modal */}
-      {currentImageIndex !== null && (
+      {currentIndex !== null && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <img
-              src={imageList[currentImageIndex]}
-              alt={`image-${currentImageIndex}`}
-              className="modal-image"
-            />
-            <button className="prev" onClick={prevImage}>
+            {isImage(imageList[currentIndex]) ? (
+              <img
+                src={imageList[currentIndex]}
+                alt={`image-${currentIndex}`}
+                className="modal-image"
+              />
+            ) : isVideo(imageList[currentIndex]) ? (
+              <video
+                src={imageList[currentIndex]}
+                className="modal-video"
+                controls
+                autoPlay
+              />
+            ) : null}
+            <button className="prev" onClick={prevMedia}>
               &#8249;
             </button>
-            <button className="next" onClick={nextImage}>
+            <button className="next" onClick={nextMedia}>
               &#8250;
             </button>
           </div>
