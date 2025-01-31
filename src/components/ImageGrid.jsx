@@ -31,9 +31,9 @@ const ImageGrid = ({ imageList }) => {
   };
 
   return (
-    <div style={styles.gridContainer}>
+    <div className="grid-container">
       {imageList.length === 0 ? (
-        <p style={styles.placeholder}>Hover over a section to see media</p>
+        <p className="placeholder">Hover over a section to see media</p>
       ) : (
         imageList.map((file, index) => (
           <div
@@ -89,20 +89,6 @@ const ImageGrid = ({ imageList }) => {
       )}
     </div>
   );
-};
-
-const styles = {
-  gridContainer: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-    gap: "10px",
-    padding: "20px",
-  },
-  placeholder: {
-    textAlign: "center",
-    fontSize: "1.2rem",
-    color: "#888",
-  },
 };
 
 export default ImageGrid;

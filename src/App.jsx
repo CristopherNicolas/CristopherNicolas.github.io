@@ -15,6 +15,7 @@ import image5 from "./assets/resources/image.png";
 import image6 from "./assets/resources/image2.png";
 import video1 from "./assets/resources/bgVid.mp4";
 import ExternalData from "./components/ExternalData";
+import SketchfabGrid from "./components/SketchfabGrid";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
 
@@ -22,23 +23,23 @@ function App() {
     {
       url: "https://www.instagram.com/criztopher_nicolas/p/DEgoRz8MXTt/",
       alt: "Post 1",
-      w: 450,
+      w: 360,
     },
     {
       url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1",
       alt: "Post 2",
-      w: 450,
+      w: 360,
     },
     {
       url: "https://www.instagram.com/p/C8s6R6XNxm6/?img_index=2",
       alt: "Post 2",
-      w: 450,
+      w: 360,
     },
-    { url: "https://www.instagram.com/p/C294tWbumVp/", alt: "Post 3", w: 350 },
+    { url: "https://www.instagram.com/p/C294tWbumVp/", alt: "Post 3", w: 360 },
     {
       url: "https://www.instagram.com/p/C-312WVNukJ/?img_index=1",
       alt: "Post 4",
-      w: 450,
+      w: 360,
     },
   ];
 
@@ -81,15 +82,18 @@ function App() {
         </div>
 
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
+          <h2>3D modeling, texturing, rigging and rendering</h2>
           <ImageGrid imageList={imgs} />
+
+          <SketchfabGrid></SketchfabGrid>
 
           <h2>2D skeleton animation in Unity</h2>
           <div className="video-container">
-            <video autoPlay loop muted>
-              <source src={video1} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <video autoPlay loop muted style={{width: '90vw', maxHeight: '500px'}}>
+            <source src={video1} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+</div>
         </div>
         <ExternalData></ExternalData>
         <div
@@ -102,11 +106,11 @@ function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "10px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gap: "5px",
             justifyContent: "center",
             alignItems: "center",
-            padding: "10px",
+            padding: "25x",
           }}
         >
           {instagramPosts.map((post, index) => (
@@ -119,6 +123,7 @@ function App() {
               <InstagramEmbed
                 url={post.url}
                 width={post.w}
+                height={post.w*1.5}
                 maxwidth={500}
                 alt={post.alt}
               />
@@ -126,8 +131,11 @@ function App() {
           ))}
         </div>
       </div>
+      
     </>
+    
   );
+  
 }
 
 export default App;
