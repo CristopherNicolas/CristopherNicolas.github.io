@@ -13,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #b30b0baa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #ec0101aa);
 }
 h1{
  color:  rgb(231, 231, 231);
@@ -51,24 +51,20 @@ h2{
 
 
 /* Estilo para el contenido principal */
-.content {
-  position: -ms-page; /* Permite posicionar elementos sobre el video */
-  z-index: 1; /* Asegura que esté por encima del video */
-  text-align: center;
-  background-color:rgb(0, 0, 0); /* Texto blanco para contraste */
-  padding: 5px;
-  background-image: url("https://www.transparenttextures.com/patterns/nami.png");
-  
-}
-
-/* Estilo adicional para un diseño más elegante */
 body {
-  
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #02000a;
   background-image: url("https://www.transparenttextures.com/patterns/retina-wood.png");
-  overflow-x: hidden; /* Evita barras de desplazamiento */
+  overflow-x: hidden; /* Evita barras de desplazamiento horizontal */
+}
+
+.content {
+  max-width: 100%; /* Asegura que el contenido no se desborde horizontalmente */
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  padding: 5px;
+  background-color: rgb(0, 0, 0); /* Texto blanco para contraste */
+  background-image: url("https://www.transparenttextures.com/patterns/nami.png");
 }
 
 /* Contenedor de la barra social */

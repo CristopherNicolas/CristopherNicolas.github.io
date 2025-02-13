@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from "react";
 import "./App.css";
 import "./components/ProfileImage";
@@ -16,6 +17,7 @@ import image6 from "./assets/resources/image2.png";
 import video1 from "./assets/resources/bgVid.mp4";
 import ExternalData from "./components/ExternalData";
 import SketchfabGrid from "./components/SketchfabGrid";
+import ProfileImage from "./components/ProfileImage";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
 
@@ -23,23 +25,23 @@ function App() {
     {
       url: "https://www.instagram.com/criztopher_nicolas/p/DEgoRz8MXTt/",
       alt: "Post 1",
-      w: 360,
+      w: 340,
     },
     {
       url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1",
       alt: "Post 2",
-      w: 360,
+      w: 340,
     },
     {
       url: "https://www.instagram.com/p/C8s6R6XNxm6/?img_index=2",
       alt: "Post 2",
-      w: 360,
+      w: 340,
     },
-    { url: "https://www.instagram.com/p/C294tWbumVp/", alt: "Post 3", w: 360 },
+   
     {
       url: "https://www.instagram.com/p/C-312WVNukJ/?img_index=1",
       alt: "Post 4",
-      w: 360,
+      w: 340,
     },
   ];
 
@@ -66,15 +68,27 @@ function App() {
     <>
       <div className="content">
         <Header />
+
+        <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
+          <ProfileImage></ProfileImage>
+        </div>
+
+
         <div
+          id="home"
           className="hidden"
           ref={(el) => elementsRef.current.push(el)}
-        ></div>
+        >
+                  <h1  className="hidden" ref={(el) => elementsRef.current.push(el)} style={{color:"crimson", padding:10,paddingBottom:100}}>
+          Welcome to my portafolio!
+        </h1>
+
+        </div>
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <Habilidades />
         </div>
 
-        <h1 className="hidden" ref={(el) => elementsRef.current.push(el)}>
+        <h1 id="projects" className="hidden" ref={(el) => elementsRef.current.push(el)}>
           My Projects
         </h1>
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
@@ -106,7 +120,7 @@ function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "5px",
             justifyContent: "center",
             alignItems: "center",
@@ -118,13 +132,13 @@ function App() {
               key={index}
               className="hidden"
               ref={(el) => elementsRef.current.push(el)}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flow", justifyContent: "center" }}
             >
               <InstagramEmbed
                 url={post.url}
                 width={post.w}
                 height={post.w*1.5}
-                maxwidth={500}
+                maxwidth={350}
                 alt={post.alt}
               />
             </div>
