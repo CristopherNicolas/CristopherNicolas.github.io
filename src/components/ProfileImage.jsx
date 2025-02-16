@@ -1,12 +1,10 @@
-import React from "react";
-const profileImg =
-  "/src/assets/images/profile.png";
+import img from "../assets/images/profile.png" 
 
 export function ProfileImage() {
   return (
     <>
       <img
-        src={profileImg}
+        src={img}
         alt="Profile"
         width={410}
         height={410}
