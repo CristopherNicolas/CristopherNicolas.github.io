@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -7,6 +6,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css"; // Asegúrate de crear este archivo para los estilos
+import { faDownload } from "@fortawesome/free-solid-svg-icons/faDownload";
 
 const Header = () => {
   return (
@@ -32,6 +32,15 @@ const Header = () => {
             <a href="#contact" className="nav-link">
               <FontAwesomeIcon icon={faEnvelope} /> Contact
             </a>
+          </li>
+          
+          <li className="nav-item"> 
+
+              <a href="#cv" className="nav-link">
+                CV
+                <FontAwesomeIcon icon={faDownload} />
+              </a>
+            
           </li>
         </ul>
       </nav>

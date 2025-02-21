@@ -18,6 +18,7 @@ import video1 from "./assets/resources/bgVid.mp4";
 import ExternalData from "./components/ExternalData";
 import SketchfabGrid from "./components/SketchfabGrid";
 import ProfileImage from "./components/ProfileImage";
+import CvViewer from "./components/CvViewer";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
 
@@ -95,6 +96,9 @@ function App() {
           <GPP username={"cristophernicolas"} />
         </div>
 
+        <CvViewer></CvViewer>
+
+
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
           <h2>3D modeling, texturing, rigging and rendering</h2>
           <ImageGrid imageList={imgs} />
@@ -107,7 +111,7 @@ function App() {
             <source src={video1} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-</div>
+        </div>
         </div>
         <ExternalData></ExternalData>
         <div
