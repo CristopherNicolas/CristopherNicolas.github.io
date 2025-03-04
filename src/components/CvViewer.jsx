@@ -5,13 +5,13 @@ const CvViewer = () => {
   return (
     <div id="cv" style={{ textAlign: "center" }}>
       <h2>Mi CV</h2>
-      <div style={{ width: "600px", height: "820px", margin: "auto", border: "1px solid #ccc" }}>
+      <div style={{ width: "300px", height: "420px", margin: "auto", border: "1px solid #ccc" }}>
         <iframe
           src={pdfUrl}
           width="100%"
           height="100%"
           style={{ border: "none" }}
-          title="Visor de CV"
+          title="Visor de CV" 
         />
       </div>
       <a href={pdfUrl} download="CV.pdf">
