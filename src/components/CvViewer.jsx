@@ -4,7 +4,7 @@ const CvViewer = () => {
 
   return (
     <div id="cv" style={{ textAlign: "center" }}>
-      <h2>Mi CV</h2>
+      <h2>Curriculum Vitae</h2>
       <div style={{ width: "300px", height: "420px", margin: "auto", border: "1px solid #ccc" }}>
         <iframe
           src={pdfUrl}

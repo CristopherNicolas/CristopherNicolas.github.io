@@ -134,3 +134,26 @@ body {
     }
   }
 }
+.viewer-container {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 20px;               /* espacio entre componentes */
+  flex-wrap: wrap;         /* permite pasar a la siguiente línea en pantallas pequeñas */
+  margin: 2rem auto;
+}
+
+/* Tamaño mínimo y máximo de cada componente */
+.viewer-container > * {
+  flex: 1 1 300px; /* crece pero mínimo 300px */
+  max-width: 350px; /* evita que se estiren demasiado en desktop */
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .viewer-container {
+    flex-direction: column; /* apilar verticalmente en móvil */
+    gap: 15px;
+    align-items: center;    /* centra los elementos */
+  }
+}

@@ -19,6 +19,7 @@ import ExternalData from "./components/ExternalData";
 import SketchfabGrid from "./components/SketchfabGrid";
 import ProfileImage from "./components/ProfileImage";
 import CvViewer from "./components/CvViewer";
+import Titulo from "./components/Titulo";
 function App() {
   const imgs = [image1, image2, image3, image4, image5, image6];
 
@@ -96,7 +97,11 @@ function App() {
           <GPP username={"cristophernicolas"} />
         </div>
 
-        <CvViewer></CvViewer>
+         <div className="viewer-container">
+            <CvViewer />
+            <Titulo />
+         </div>
+
 
 
         <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
