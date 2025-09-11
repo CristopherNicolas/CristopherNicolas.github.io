@@ -1,0 +1,52 @@
+/* Contenedor principal que ignora restricciones de App.css */
+.blackjack-page-wrapper {
+  width: 100vw;          /* ocupa todo el ancho de la ventana */
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #02000a; /* fondo opcional */
+}
+
+/* Título centrado */
+.blackjack-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contenedor del embed con proporción 16:9 */
+.blackjack-embed-wrapper {
+  position: relative;
+  width: 90vw;            /* ocupa 90% del ancho de la ventana */
+  max-width: 1300px;      /* opcional: no se hace demasiado grande en PC */
+  padding-top: 58.46%;    /* 760 / 1300 ≈ 16:9 */
+}
+
+/* iframe ocupa todo el contenedor sin distorsión */
+.blackjack-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .blackjack-embed-wrapper {
+    width: 95vw;
+    padding-top: 58.46%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blackjack-embed-wrapper {
+    width: 100vw;
+    padding-top: 58.46%;
+  }
+}
