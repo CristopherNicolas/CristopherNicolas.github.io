@@ -15,7 +15,7 @@ const TituloViewer = () => {
 
       <a href={pdf} download="Diploma-Uniacc.pdf">
         <button className="download-button">
-          Descargar Diploma
+          Descargar licencia
         </button>
       </a>
     </div>

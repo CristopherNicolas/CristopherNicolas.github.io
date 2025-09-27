@@ -60,10 +60,10 @@ body {
 }
 
 .content {
-  max-width: 100%; /* Asegura que el contenido no se desborde horizontalmente */
-  overflow-x: hidden; /* Evita el desbordamiento horizontal */
-  padding: 5px;
-  background-color: rgb(0, 0, 0); /* Texto blanco para contraste */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: black;
   background-image: url("https://www.transparenttextures.com/patterns/nami.png");
 }
 

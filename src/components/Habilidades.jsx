@@ -14,7 +14,7 @@ import aws from "../assets/images/aws.png"
 export default function Habilidades() {
   return (
     <>
-      <h1>Skills</h1>
+      <h1>Habilidades</h1>
       <img src={unityImg} className="logo"></img>
       <img src={cSharpImg} className="logo"></img>
       <img src={cmm} className="logo"></img>
