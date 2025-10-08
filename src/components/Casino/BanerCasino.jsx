@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../../styles/Casino.css";
 import blackjackIMG from "../../assets/casino/blackjack.png";
+import tragamonedas3DIMG from "../../assets/casino/Tragamonedas.png";
 
 const gamesPreview = [
   {
@@ -8,6 +9,11 @@ const gamesPreview = [
     image: blackjackIMG, // imagen del juego
     route: "/casino/blackjack",        // ruta interna React
   },
+  {
+    title: "Tragamonedas 3D",
+    image: tragamonedas3DIMG,
+    route: "/casino/tragamonedas3d",      
+  }
   // Puedes agregar más juegos siguiendo el mismo formato
 ];
 
