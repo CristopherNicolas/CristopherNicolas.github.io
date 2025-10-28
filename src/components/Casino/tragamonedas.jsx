@@ -13,7 +13,7 @@ const Tragamonedas = () => {
       </p>
 
       <div className="blackjack-embed-wrapper">
-     <iframe frameBorder="0" src="https://itch.io/embed-upload/15184214?color=111111" allowfullscreen="" width="1300" height="760"><a href="https://criztophernicolas.itch.io/tragamonedas-3d">Play Tragamonedas on itch.io</a></iframe>
+     <iframe frameBorder="0" src="https://itch.io/embed-upload/15376762?color=111111" allowfullscreen="" width="1300" height="760"><a href="https://criztophernicolas.itch.io/tragamonedas-3d">Play Tragamonedas on itch.io</a></iframe>
       </div>
       <br></br>
        <button onClick={() => navigate("/")}>
