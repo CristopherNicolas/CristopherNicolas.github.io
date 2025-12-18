@@ -17,14 +17,11 @@ import { InstagramEmbed } from "react-social-media-embed";
 import image1 from "../assets/resources/mai.png";
 import image2 from "../assets/resources/render3.png";
 import image3 from "../assets/resources/render4.png";
-import image4 from "../assets/resources/render5.png";
-import image5 from "../assets/resources/image.png";
-import image6 from "../assets/resources/image2.png";
 import video1 from "../assets/resources/bgVid.mp4";
 import video2 from "../assets/resources/intro.mp4";
 import HeroProfile from "./HeroProfile";
 
-const imgs = [image1, image2, image3, image4, image5, image6];
+const imgs = [image1, image2, image3];
 
 const instagramPosts = [
    { url: "https://www.instagram.com/p/DOaZEHHDtpQ/?img_index=1", alt: "Post 1", w: 340 },

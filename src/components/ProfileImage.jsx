@@ -1,18 +1,9 @@
-import img from "../assets/images/profile.png" 
+import img from "../assets/images/profile.png";
 
-export function ProfileImage() {
+export default function ProfileImage() {
   return (
-    <>
-      <img
-        src={img}
-        alt="Profile"
-        width={410}
-        height={380}
-      
-        style={{ borderRadius: "50%" }} // Ejemplo de estilo par
-      />
-    </>
+    <div className="profile-image-wrapper">
+      <img src={img} alt="Profile" />
+    </div>
   );
 }
-
-export default ProfileImage;
