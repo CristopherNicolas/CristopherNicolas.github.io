@@ -1,0 +1,119 @@
+/* ================= GPP ================= */
+
+.gpp {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 1.8rem;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+
+.gpp-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.gpp-header img {
+  width: 36px;
+  height: 36px;
+}
+
+.gpp-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+/* ================= BUTTON ================= */
+
+.gpp-toggle {
+  background: rgba(108, 242, 194, 0.15);
+  border: 1px solid rgba(108, 242, 194, 0.4);
+  color: var(--text-main);
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gpp-toggle:hover {
+  background: rgba(108, 242, 194, 0.25);
+  box-shadow: 0 0 18px rgba(108, 242, 194, 0.4);
+}
+
+/* ================= GRID ================= */
+
+.gpp-grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ================= CARD ================= */
+
+.gpp-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1.2rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gpp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.gpp-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.gpp-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.gpp-card a {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.gpp-card a:hover {
+  text-decoration: underline;
+}
+
+/* ================= STATUS ================= */
+
+.gpp-status {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1rem;
+}
+
+.gpp-status.error {
+  color: #ff6b6b;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+  .gpp {
+    padding: 1.4rem 1rem;
+  }
+
+  .gpp-header h2 {
+    font-size: 1.2rem;
+  }
+}

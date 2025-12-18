@@ -7,7 +7,7 @@ export function ProfileImage() {
         src={img}
         alt="Profile"
         width={410}
-        height={410}
+        height={380}
       
         style={{ borderRadius: "50%" }} // Ejemplo de estilo par
       />

@@ -1,12 +1,19 @@
 // src/components/HomePage.jsx
 import "../App.css";
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+
 import Header from "./Header";
-import ImageGrid from "./ImageGrid";
 import Habilidades from "./Habilidades";
-import Rss from "./Rss";
+import BanerCasino from "./Casino/BanerCasino";
 import GPP from "./GPP";
+import CvViewer from "./CvViewer";
+import Titulo from "./Titulo";
+import ImageGrid from "./ImageGrid";
+import SketchfabGrid from "./SketchfabGrid";
+import Rss from "./Rss";
+
 import { InstagramEmbed } from "react-social-media-embed";
+
 import image1 from "../assets/resources/mai.png";
 import image2 from "../assets/resources/render3.png";
 import image3 from "../assets/resources/render4.png";
@@ -15,23 +22,24 @@ import image5 from "../assets/resources/image.png";
 import image6 from "../assets/resources/image2.png";
 import video1 from "../assets/resources/bgVid.mp4";
 import video2 from "../assets/resources/intro.mp4";
-import SketchfabGrid from "./SketchfabGrid";
-import ProfileImage from "./ProfileImage";
-import CvViewer from "./CvViewer";
-import Titulo from "./Titulo";
-import BanerCasino from "./Casino/BanerCasino";
-import Hero from "./Hero";
+import HeroProfile from "./HeroProfile";
 
-const HomePage = () => {
-  const imgs = [image1, image2, image3, image4, image5, image6];
+const imgs = [image1, image2, image3, image4, image5, image6];
 
-  const instagramPosts = [
-    { url: "https://www.instagram.com/criztopher_nicolas/p/DEgoRz8MXTt/", alt: "Post 1", w: 340 },
-    { url: "https://www.instagram.com/p/DDBjPoQu-bl/?img_index=1", alt: "Post 2", w: 340 },
-    { url: "https://www.instagram.com/p/C-312WVNukJ/?img_index=1", alt: "Post 4", w: 340 },
-  ];
+const instagramPosts = [
+   { url: "https://www.instagram.com/p/DOaZEHHDtpQ/?img_index=1", alt: "Post 1", w: 340 },
+    { url: "https://www.instagram.com/p/DPoigW1kX-A/?img_index=1", alt: "Post 2", w: 340 },
+    { url: "https://www.instagram.com/p/DMmLJQysqkg/?img_index=1", alt: "Post 4", w: 340 },
+];
 
+export default function HomePage() {
   const elementsRef = useRef([]);
+
+  const observeRef = (el) => {
+    if (el && !elementsRef.current.includes(el)) {
+      elementsRef.current.push(el);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,109 +50,88 @@ const HomePage = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
-    elementsRef.current.forEach((el) => el && observer.observe(el));
+    elementsRef.current.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="content">
+    <main className="content">
       <Header />
-      <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        <ProfileImage />
-      </div>
-      <div id="home" className="hidden" ref={(el) => elementsRef.current.push(el)}>
-      </div>
-         <Hero />
-      
-     
 
+      {/* HERO */}
+      <section className="section hidden" ref={observeRef}>
+        <HeroProfile />
+      </section>
 
-
-      <div id="skills" className="hidden" ref={(el) => elementsRef.current.push(el)}>
+      {/* SKILLS */}
+      <section id="skills" className="section hidden skills-section" ref={observeRef}>
         <Habilidades />
-      </div>
+      </section>
 
-
-      <h1 id="projects" className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        Mis proyectos
-      </h1>
-      <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
+      {/* PROJECTS */}
+      <section className="section hidden" ref={observeRef}>
+        <h1 id="projects">Mis proyectos</h1>
         <BanerCasino />
-      </div>
+      </section>
 
-       <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        <h2>Desarrollo multiplyaer online (netcode for game objects)</h2>
+      {/* NETCODE */}
+      <section className="section hidden" ref={observeRef}>
+        <h2>Desarrollo multiplayer online (Netcode for GameObjects)</h2>
         <div className="video-container">
-            <video autoPlay loop muted style={{ width: "90vw", maxHeight: "500px" }}>
-              <source src={video2} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-       </div>
-        <br></br>
-      <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        <GPP username={"cristophernicolas"} />
-      </div>
-
-      <div className="viewer-container">
-        <CvViewer />
-        <Titulo />
-      </div>
-
-      <div className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        <h2>Modelado 3D, Texturizado, rigging y rendering</h2>
-        <ImageGrid imageList={imgs} />
-        <SketchfabGrid />
-        <h2>Animación 2D unity</h2>
-        <div className="video-container">
-          <video autoPlay loop muted style={{ width: "90vw", maxHeight: "500px" }}>
-            <source src={video1} type="video/mp4" />
-            Your browser does not support the video tag.
+          <video autoPlay loop muted>
+            <source src={video2} type="video/mp4" />
           </video>
         </div>
-      </div>
+      </section>
 
-      
+      {/* GITHUB */}
+      <section className="section hidden" ref={observeRef}>
+        <GPP username="cristophernicolas" />
+      </section>
 
+      {/* CV */}
+      <section className="viewer-container section hidden" ref={observeRef}>
+        <CvViewer />
+        <Titulo />
+      </section>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "5px",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "25px",
-        }}
-      >
-        {instagramPosts.map((post, index) => (
-          <div
-            key={index}
-            className="hidden"
-            ref={(el) => elementsRef.current.push(el)}
-            style={{ display: "flow", justifyContent: "center" }}
-          >
+      {/* 3D & ANIMATION */}
+      <section className="section hidden" ref={observeRef}>
+        <h2>Modelado 3D, Texturizado, Rigging y Rendering</h2>
+        <ImageGrid imageList={imgs} />
+        <SketchfabGrid />
+
+        <h2>Animación 2D en Unity</h2>
+        <div className="video-container">
+          <video autoPlay loop muted>
+            <source src={video1} type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      {/* INSTAGRAM */}
+        <h2>Tambien soy cosplayer, mis publicaciones en Instagram</h2>
+      <section className="section social-grid">
+        {instagramPosts.map((post, i) => (
+          <div key={i} className="hidden" ref={observeRef}>
             <InstagramEmbed
               url={post.url}
               width={post.w}
               height={post.w * 1.5}
               maxwidth={350}
-              alt={post.alt}
             />
           </div>
         ))}
-      </div>
-      
-      <div id="contact" className="hidden" ref={(el) => elementsRef.current.push(el)}>
-        <Rss />
-      </div>
-    </div>
-  );
-};
+      </section>
 
-export default HomePage;
+      {/* CONTACT */}
+      <section id="contact" className="section hidden" ref={observeRef}>
+        <Rss />
+      </section>
+    </main>
+  );
+}
