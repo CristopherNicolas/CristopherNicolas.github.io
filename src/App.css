@@ -40,7 +40,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem; /* 🔽 antes 3rem */
+  gap: 1.6rem;
 }
 
 /* ================= GLASS SECTIONS ================= */
@@ -55,7 +55,8 @@ section,
   border: 1px solid var(--border-glass);
   border-radius: 18px;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
-  padding: 1.25rem; /* 🔽 más compacto */
+  padding: 1.25rem;
+  will-change: transform;
 }
 
 /* ================= TEXT ================= */
@@ -128,10 +129,11 @@ video {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* Mobile */
+/* Mobile video optimization */
 @media (max-width: 600px) {
   video {
     max-height: 180px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -139,7 +141,7 @@ video {
 
 .viewer-container {
   display: flex;
-  gap: 1.2rem; /* 🔽 */
+  gap: 1.2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -169,10 +171,10 @@ a:hover {
 /* ================= SKILLS ================= */
 
 .skills {
-  padding: 1.4rem 1rem; /* 🔽 */
+  padding: 1.4rem 1rem;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--blur);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -185,7 +187,7 @@ a:hover {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-  gap: 1rem; /* 🔽 */
+  gap: 1rem;
   justify-items: center;
   align-items: center;
 }
@@ -219,6 +221,65 @@ a:hover {
   box-shadow: 0 8px 22px rgba(108, 242, 194, 0.35);
 }
 
+/* ================= INSTAGRAM GRID ================= */
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  justify-items: center;
+  align-items: start;
+  padding: 1.25rem;
+}
+
+.social-grid > div {
+  width: 100%;
+  max-width: 340px;
+}
+
+/* ================= PROFILE IMAGE ================= */
+
+.profile-image-wrapper {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.55);
+
+  opacity: 0;
+  transform: scale(0.92) translateY(20px);
+  animation: profileFadeIn 0.9s ease-out forwards;
+  will-change: transform;
+}
+
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image-wrapper:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(108, 242, 194, 0.25);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .profile-image-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+}
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 480px) {
@@ -243,66 +304,37 @@ a:hover {
     padding: 1rem;
   }
 }
-/* ================= INSTAGRAM GRID ================= */
 
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.2rem;               /* compacto */
-  justify-items: center;
-  align-items: start;
-  padding: 1.25rem;          /* menos aire */
-}
+/* ================= PERF OPTIMIZATION ================= */
 
-/* Evita que Instagram rompa el layout */
-.social-grid > div {
-  width: 100%;
-  max-width: 340px;
-}
-/* ================= PROFILE IMAGE ================= */
-
-.profile-image-wrapper {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
-
-  /* Estilo glass */
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 rgba(255, 255, 255, 0);
-
-  /* Animación inicial */
-  opacity: 0;
-  transform: scale(0.92) translateY(20px);
-  animation: profileFadeIn 0.9s ease-out forwards;
-}
-
-.profile-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Hover sutil */
-.profile-image-wrapper:hover {
-  transform: scale(1.04);
-  box-shadow:
-    0 22px 55px rgba(0, 0, 0, 0.7),
-    0 0 35px rgba(108, 242, 194, 0.25);
-}
-
-/* Desktop */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  section,
+  .card,
+  .video-container,
+  .skills,
   .profile-image-wrapper {
-    width: 260px;
-    height: 260px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media (max-width: 600px) {
+  .hidden {
+    transform: none;
+    opacity: 1;
+  }
+
+  .visible {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card,
+  .skill-item,
+  .profile-image-wrapper {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
   }
 }
 
